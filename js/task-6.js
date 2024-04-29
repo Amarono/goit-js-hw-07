@@ -8,13 +8,14 @@ function createBoxes(amount) {
   const boxesContainer = document.getElementById('boxes');
   boxesContainer.innerHTML = '';
 
-  for (let i = 0; i < amount; i++) {
-    const box = document.createElement('div');
-    box.classList.add('box');
-    box.style.width = `${30 + i * 10}px`;
-    box.style.height = `${30 + i * 10}px`;
-    box.style.backgroundColor = getRandomHexColor();
-    boxesContainer.appendChild(box);
+  let sizeBox = 30;
+  for (let i = 0; i < amount; i += 1) {
+    const newBox = document.createElement('div');
+    newBox.style.width = `${sizeBox}px`;
+    newBox.style.height = `${sizeBox}px`;
+    newBox.style.backgroundColor = getRandomHexColor();
+    boxesContainer.append(newBox);
+    sizeBox += 10;
   }
 }
 

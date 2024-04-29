@@ -27,15 +27,20 @@ const images = [
 
 const gallery = document.querySelector('.gallery');
 
-const fragment = document.createDocumentFragment();
+const createGallery = () => {
+  const fragment = document.createDocumentFragment();
 
-images.slice(0, 3).forEach(image => {
-  const li = document.createElement('li');
-  const img = document.createElement('img');
-  img.src = image.url;
-  img.alt = image.alt;
-  li.appendChild(img);
-  fragment.appendChild(li);
-});
+  images.slice(0, 3).forEach(image => {
+    const li = document.createElement('li');
+    const img = document.createElement('img');
 
-gallery.appendChild(fragment);
+    img.src = image.url;
+    img.alt = image.alt;
+    li.appendChild(img);
+    fragment.appendChild(li);
+  });
+
+  gallery.appendChild(fragment);
+};
+
+createGallery();
